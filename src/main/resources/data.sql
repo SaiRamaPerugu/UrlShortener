@@ -1,0 +1,1 @@
+INSERT INTO url_mapping(ID, long_url, short_url) values(1,'www.example.com', 'localhost.com/abc123');
