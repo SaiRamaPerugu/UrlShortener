@@ -1,9 +1,11 @@
 package com.ram.urlshortener.controller;
 
 import com.ram.urlshortener.service.UrlService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class MainController {
 
@@ -15,7 +17,9 @@ public class MainController {
 
     @RequestMapping("/getShortUrl")
     public String getShortUrl(String url) {
-        System.out.println(url);
-        return urlService.getShortUrl(url);
+        log.info("Long url {}", url);
+        String shortUrl = urlService.getShortUrl(url);
+        log.info("Short url {}", shortUrl);
+        return  shortUrl;
     }
 }
