@@ -39,8 +39,8 @@ public class UrlService {
             log.info("Error while generating Hash key");
             log.error("No such algorithm: {}", noSuchAlgorithmException.getMessage());
         } catch(Exception exception) {
-            log.error("Error retrieving the URL from Database");
-            throw new RuntimeException("Error retrieving the URL from Database");
+            log.error("Error retrieving the URL from Database, {}", exception.getMessage());
+            throw new RuntimeException("Error retrieving the URL from Database" );
         }
         return "http://localhost/" + shortUrl;
     }

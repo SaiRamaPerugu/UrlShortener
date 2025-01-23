@@ -32,7 +32,7 @@ public class UrlDao implements  Dao {
     public int insertUrl(String longUrl, String shortUrl) {
          int result;
          try {
-             result = jdbcTemplate.update("INSERT INTO url_mapping(ID, long_url, short_url) VALUES(?,?,?)", 2,longUrl, shortUrl);
+             result = jdbcTemplate.update("INSERT INTO url_mapping(long_url, short_url) VALUES(?,?)", longUrl, shortUrl);
              log.info("Inserted url: " + shortUrl);
          } catch(Exception ex) {
              log.error("Error while inserting url: {}", ex.getMessage());
